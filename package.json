@@ -1,6 +1,6 @@
 {
   "name": "share-price",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Completely free NPM library to get realtime Stock / Share Price",
   "main": "share-price.js",
   "scripts": {
