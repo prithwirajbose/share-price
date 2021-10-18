@@ -19,7 +19,7 @@ sharePrice.getSharePrice({ stockCode: "AAPL", exchageCode: "NASDAQ" }).then(func
 
 //Using a callback function.
 sharePrice.getSharePrice({ stockCode: "AAPL", exchageCode: "NASDAQ" }, function (sharePrice, e) {
-    if (e) {
+    if (error) {
         console.error(error);
     }
     else {
