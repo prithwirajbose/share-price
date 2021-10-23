@@ -3,13 +3,8 @@ NPM library to get realtime Share / Stock Price from Yahoo Finance Website. This
 
 ## Functions
 
-- [share-price](#share-price)
-  - [Functions](#functions)
   - [Function getSharePrice(config, callbackFunction(sharePrice, error))](#function-getsharepriceconfig-callbackfunctionshareprice-error)
-    - [Usage](#usage)
   - [Function getStockSymbol(config, callbackFunction(sharePrice, error))](#function-getstocksymbolconfig-callbackfunctionshareprice-error)
-    - [Usage](#usage-1)
-  - [Future Enhancements](#future-enhancements)
 
 ## Function getSharePrice(config, callbackFunction(sharePrice, error))
 
@@ -65,6 +60,4 @@ sharePrice.getStockSymbol({ stockSymbol: "AAPL", exchageCode: "NASDAQ" }, functi
 });
 ```
 
-## Future Enhancements
-This library currenctly doesn't support searching a Company by it's name and finding which stock exchange it is listed to and with what stock code / symbol / scrip name. I'm working on implementing that feature.
 
