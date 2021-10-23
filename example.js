@@ -15,18 +15,18 @@ sharePrice.getSharePrice({ stockSymbol: "AAPL", exchageCode: "NASDAQ" }, functio
     }
 });
 
-//Using a Promise.
-sharePrice.getStockSymbol({ stockName: "Apple Inc", list: true }).then(function(StockSymbol) {
-    console.log(StockSymbol);
+//Using a Promise retrieve list.
+sharePrice.getStockSymbol({ stockName: "Apple Inc", list: true }).then(function(stockSymbolResult) {
+    console.log(stockSymbolResult);
 }).catch((error) => {
     console.log(error);
 });
 
-//Using a callback function.
-sharePrice.getStockSymbol({ stockName: "Apple Inc" }, function(stockPrice, error) {
+//Using a callback function rerieve best match.
+sharePrice.getStockSymbol({ stockName: "Apple Inc" }, function(stockSymbolResult, error) {
     if (error) {
         console.error(error);
     } else {
-        console.log(stockPrice);
+        console.log(stockSymbolResult);
     }
 });

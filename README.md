@@ -8,12 +8,16 @@ NPM library to get realtime Share / Stock Price from Yahoo Finance Website. This
 
 ## Function getSharePrice(config, callbackFunction(sharePrice, error))
 
-`stockSymbol` is a mandatory property for `config` parameter of `getSharePrice(config, callbackFunction(sharePrice, error))` function. Please refer [Yahoo Finance Disclaimer page](https://www.google.com/googlefinance/disclaimer/) for the Exchange Codes. Stock Codes are the standard stock codes / symbols /scrip names issued by Stock Exchanges for each of the listed Companies. You must pass valid values for the 2 config properties, otherwise the library function will retun error.
+This function is used to retrieve the Share Price of a given Stock Symbol. `stockSymbol` is a mandatory property for `config` parameter of `getSharePrice(config, callbackFunction(sharePrice, error))` function. You must pass valid values for the 2 config properties, otherwise the library function will retun error. If you are not sure of the exact stockSymbol for a Company, you can use the ```getStockSymbol()``` function to search it.
 You can optionally use any of the [axios request config](https://www.npmjs.com/package/axios#request-config) along with `stockName` and `exchageCode`
 
 If you are using the library behind a coporate proxy please refer axios request config properties link on how to set your proxy settings.
 
-### Usage
+### Returns
+
+ - A ```number``` sharePrice decimal value or error
+
+### Example
 ```js
 var sharePrice = require("share-price");
 //Using a Promise.
@@ -33,29 +37,34 @@ sharePrice.getSharePrice({ stockSymbol: "AAPL", exchageCode: "NASDAQ" }, functio
 });
 ```
 
-## Function getStockSymbol(config, callbackFunction(sharePrice, error))
+## Function getStockSymbol(config, callbackFunction(stockSymbolResult, error))
 
-`stockSymbol` is a mandatory property for `config` parameter of `getStockSymbol(config, callbackFunction(sharePrice, error))` function. Please refer [Yahoo Finance Disclaimer page](https://www.google.com/googlefinance/disclaimer/) for the Exchange Codes. Stock Codes are the standard stock codes / symbols /scrip names issued by Stock Exchanges for each of the listed Companies. You must pass valid values for the 2 config properties, otherwise the library function will retun error.
+This function is used to search for Stock Symbols for a given Stock Name String. `stockName` is a mandatory property for `config` parameter of `getStockSymbol(config, callbackFunction(stockSymbolResult, error))` function. . You must pass valid value for the config property, otherwise the library function will retun error. Optionally you can send another config property ```list``` as boolean value ```true``` or ```false```. When ```list: true``` is sent, the function returns an array of matching Stock Symbols along with Full Company and Stock Exchange Names.
 You can optionally use any of the [axios request config](https://www.npmjs.com/package/axios#request-config) along with `stockName` and `exchageCode`
 
 If you are using the library behind a coporate proxy please refer axios request config properties link on how to set your proxy settings.
 
-### Usage
+### Returns
+
+ - A ```string``` stockSymbolResult containing only the best matched Stock symbol name if list config is not sent as ```true``` or error 
+ - An ```array``` stockSymbolResult containing a list of matching Stock symbol names along with Full Company and Stock Exchange Names if list config is not sent as ```true``` or error 
+
+### Example
 ```js
 var sharePrice = require("share-price");
-//Using a Promise.
-sharePrice.getStockSymbol({ stockSymbol: "AAPL", exchageCode: "NASDAQ" }).then(function(stockPrice) {
-    console.log(stockPrice);
+//Using a Promise retrieve list.
+sharePrice.getStockSymbol({ stockName: "Apple Inc", list: true }).then(function(stockSymbolResult) {
+    console.log(stockSymbolResult);
 }).catch((error) => {
     console.log(error);
 });
 
-//Using a callback function.
-sharePrice.getStockSymbol({ stockSymbol: "AAPL", exchageCode: "NASDAQ" }, function(stockPrice, error) {
+//Using a callback function rerieve best match.
+sharePrice.getStockSymbol({ stockName: "Apple Inc" }, function(stockSymbolResult, error) {
     if (error) {
         console.error(error);
     } else {
-        console.log(stockPrice);
+        console.log(stockSymbolResult);
     }
 });
 ```
