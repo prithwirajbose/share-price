@@ -3,8 +3,13 @@ NPM library to get realtime Share / Stock Price from Yahoo Finance Website. This
 
 ## Functions
 
-- [getSharePrice(config, callbackFunction(sharePrice, error))](#function-getStocksymbol(config,-callbackfunction(sharePrice,-error)))
-- getStockSymbol(config, callbackFunction(sharePrice, error))
+- [share-price](#share-price)
+  - [Functions](#functions)
+  - [Function getSharePrice(config, callbackFunction(sharePrice, error))](#function-getsharepriceconfig-callbackfunctionshareprice-error)
+    - [Usage](#usage)
+  - [Function getStockSymbol(config, callbackFunction(sharePrice, error))](#function-getstocksymbolconfig-callbackfunctionshareprice-error)
+    - [Usage](#usage-1)
+  - [Future Enhancements](#future-enhancements)
 
 ## Function getSharePrice(config, callbackFunction(sharePrice, error))
 
