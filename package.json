@@ -1,34 +1,33 @@
 {
-  "name": "share-price",
-  "version": "1.0.4",
-  "description": "Completely free NPM library to get realtime Stock / Share Price",
-  "main": "share-price.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/prithwirajbose/share-price.git"
-  },
-  "keywords": [
-    "stock",
-    "share",
-    "stock exchange",
-    "share price",
-    "stock price",
-    "market",
-    "share market",
-    "stock market"
-  ],
-  "author": "Prithwiraj Bose <sribasu@gmail.com> (https://sribasu.com)",
-  "license": "BSD-2-Clause-FreeBSD",
-  "bugs": {
-    "url": "https://github.com/prithwirajbose/share-price/issues"
-  },
-  "homepage": "https://github.com/prithwirajbose/share-price#readme",
-  "funding": "https://www.buymeacoffee.com/sribasu",
-  "dependencies": {
-    "dom-parser": "latest",
-    "axios": "latest"
-  }
+    "name": "share-price",
+    "version": "1.0.5",
+    "description": "Completely free NPM library to get realtime Stock / Share Price",
+    "main": "example.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/prithwirajbose/share-price.git"
+    },
+    "keywords": [
+        "stock",
+        "share",
+        "stock exchange",
+        "share price",
+        "stock price",
+        "market",
+        "share market",
+        "stock market"
+    ],
+    "author": "Prithwiraj Bose <sribasu@gmail.com> (https://sribasu.com)",
+    "license": "BSD-2-Clause-FreeBSD",
+    "bugs": {
+        "url": "https://github.com/prithwirajbose/share-price/issues"
+    },
+    "homepage": "https://github.com/prithwirajbose/share-price#readme",
+    "funding": "https://prithwirajbose.github.io/lodash-extra/#donate",
+    "dependencies": {
+        "axios": "latest"
+    }
 }

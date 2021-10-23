@@ -1,17 +1,32 @@
-var sharePrice = require("./share-price");
+var sharePrice = require("./share-price.js");
 //Using a Promise.
-sharePrice.getSharePrice({ stockCode: "AAPL", exchageCode: "NASDAQ" }).then(function (sharePrice) {
-    console.log(sharePrice);
+sharePrice.getSharePrice({ stockSymbol: "AAPL", exchageCode: "NASDAQ" }).then(function(stockPrice) {
+    console.log(stockPrice);
 }).catch((error) => {
     console.log(error);
 });
 
 //Using a callback function.
-sharePrice.getSharePrice({ stockCode: "AAPL", exchageCode: "NASDAQ" }, function (sharePrice, error) {
+sharePrice.getSharePrice({ stockSymbol: "AAPL", exchageCode: "NASDAQ" }, function(stockPrice, error) {
     if (error) {
         console.error(error);
+    } else {
+        console.log(stockPrice);
     }
-    else {
-        console.log(sharePrice);
+});
+
+//Using a Promise.
+sharePrice.getStockSymbol({ stockName: "Apple Inc", list: true }).then(function(StockSymbol) {
+    console.log(StockSymbol);
+}).catch((error) => {
+    console.log(error);
+});
+
+//Using a callback function.
+sharePrice.getStockSymbol({ stockName: "Apple Inc" }, function(stockPrice, error) {
+    if (error) {
+        console.error(error);
+    } else {
+        console.log(stockPrice);
     }
 });
