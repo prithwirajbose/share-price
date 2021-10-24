@@ -7,7 +7,7 @@ sharePrice.getSharePrice({ stockSymbol: "AAPL" }).then(function(stockPrice) {
 });
 
 //Using a callback function.
-sharePrice.getSharePrice({ stockSymbol: "0P0001784G.BO" }, function(stockPrice, error) {
+sharePrice.getSharePrice({ stockSymbol: "AAPL" }, function(stockPrice, error) {
     if (error) {
         console.error(error);
     } else {

@@ -2,7 +2,7 @@
     "name": "share-price",
     "version": "1.0.8",
     "description": "Completely free NPM library to get realtime Stock / Share Price",
-    "main": "example.js",
+    "main": "share-price.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
