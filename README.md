@@ -21,14 +21,14 @@ If you are using the library behind a coporate proxy please refer axios request 
 ```js
 var sharePrice = require("share-price");
 //Using a Promise.
-sharePrice.getSharePrice({ stockSymbol: "AAPL", exchageCode: "NASDAQ" }).then(function(stockPrice) {
+sharePrice.getSharePrice({ stockSymbol: "AAPL" }).then(function(stockPrice) {
     console.log(stockPrice);
 }).catch((error) => {
     console.log(error);
 });
 
 //Using a callback function.
-sharePrice.getSharePrice({ stockSymbol: "AAPL", exchageCode: "NASDAQ" }, function(stockPrice, error) {
+sharePrice.getSharePrice({ stockSymbol: "AAPL" }, function(stockPrice, error) {
     if (error) {
         console.error(error);
     } else {
